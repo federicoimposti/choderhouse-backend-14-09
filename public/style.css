@@ -13,6 +13,7 @@ body {
     align-items: center;
     width: 100vw;
     flex-direction: column;
+    height: 100vh;
 }
 
 .products-list-wrapper {
@@ -138,4 +139,10 @@ img.product-image {
 
 .messages-form {
     margin: 32px;
+}
+
+.user {
+    width: 100%;
+    max-width: 627px;
+    margin: 26px 0;
 }

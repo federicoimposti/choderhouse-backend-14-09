@@ -1,3 +1,5 @@
+const session = require("express-session");
+const cookieParser = require("cookie-parser");
 const express = require('express');
 const router = require('./routes');
 
@@ -19,6 +21,31 @@ const { Server: IOServer } = require('socket.io');
 const app = express();
 const httpServer = new HttpServer(app);
 const io = new IOServer(httpServer);
+
+const uri = "mongodb+srv://fimposti:CoderHouse27@hms.i5ds7.mongodb.net/?retryWrites=true&w=majority";
+
+const MongoStore = require("connect-mongo");
+const advanceOptions = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+};
+
+app.use(cookieParser());
+
+app.use(
+    session({
+        store: new MongoStore({ 
+            mongoUrl: uri,
+            mongoOptions: advanceOptions   
+        }),     
+        secret: "coderhouse",
+        resave: true,
+        saveUninitialized: true,
+        rolling: true,
+        cookie: { maxAge: 60000 },
+    })
+);
+  
 
 app.set('view engine', 'ejs');
 app.set('views', './views');

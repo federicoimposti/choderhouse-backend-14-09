@@ -1,9 +1,10 @@
-## Backend Coderhouse - Faker
+## Backend Coderhouse - Sesiones - login
 
  1. Clonar el proyecto.
  2. Realizar la instalación de dependencias ejecutando `npm i`
- 3. Inicializar el contenedor Docker ejecutando: docker-compose up -d
- 4. En la raíz del proyecto ejecutar `nodemon src/app.js`
+ 4. En la raíz del proyecto ejecutar `nodemon server.js`
 
-Para visualizar la vista con los productos ingresar a http://localhost:8080/
-Para validar el endpoint que genera productos Random: http://localhost:8080/api/productos-test# choderhouse-backend-14-09
+Para ingresar al login http://localhost:8080/login
+También se visualizará el login en caso de no haber ingresado ningún usuario.
+
+El usuario que accede a la ruta privada http://localhost:8080/login/privada es `fede`.

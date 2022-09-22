@@ -4,10 +4,16 @@
         <%- include('../partials/head'); %>
         
         <script src="/socket.io/socket.io.js"></script>
-        <title>Coderhouse Backend - Desafío 05 - EJS</title>
+        <title>Coderhouse Backend - Sesiones</title>
     </head>
     <body>
         <div class="container">
+            <% if (user) { %>
+				<div class="user">
+						<h3>Bienvenido <%= user %></h3>
+						<a href="/logout">Logout</a>                                   
+				</div>
+			<% } %>
             <div id="products"></div>
         </div>
     </body>
